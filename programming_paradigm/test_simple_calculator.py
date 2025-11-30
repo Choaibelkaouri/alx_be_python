@@ -7,13 +7,14 @@ class TestSimpleCalculator(unittest.TestCase):
 
     def setUp(self):
         """Set up a SimpleCalculator instance before each test."""
-        self.calc = SimpleCalculator()  # <-- هنا SimpleCalculator() اللي كيقلبو عليها
+        self.calc = SimpleCalculator()  # SimpleCalculator() موجود هنا
 
-    def test_add(self):
+    def test_addition(self):
         """Test the add method."""
         self.assertEqual(self.calc.add(2, 3), 5)
         self.assertEqual(self.calc.add(-1, 1), 0)
         self.assertEqual(self.calc.add(0, 0), 0)
+        self.assertEqual(self.calc.add(-5, -7), -12)
 
     def test_subtract(self):
         """Test the subtract method."""
@@ -30,7 +31,7 @@ class TestSimpleCalculator(unittest.TestCase):
     def test_divide_normal(self):
         """Test the divide method with normal values."""
         self.assertEqual(self.calc.divide(10, 2), 5)
-        self.assertAlmostEqual(self.calc.divide(7, 2), 3.5)
+        self.assertEqual(self.calc.divide(7, 2), 3.5)
 
     def test_divide_by_zero(self):
         """Test the divide method when dividing by zero."""
